@@ -35,7 +35,7 @@ nvm use # This will switch to the project's Node.js version
 3. Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Project Structure
@@ -150,10 +150,10 @@ Run the build command to compile your script:
 
 ```bash
 # For development (unminified, easier to debug)
-npm run build-debug
+pnpm run build-debug
 
 # For production (minified, optimized)
-npm run build
+pnpm run build
 ```
 
 ### 4. Deploy to HomeyScript
@@ -179,16 +179,17 @@ This will:
 
 ## Development Workflow
 
-### Available NPM Scripts
+### Available pnpm Scripts
 
-- `npm run build` - Build all scripts for production (minified, optimized)
-- `npm run build-debug` - Build all scripts for debugging (unminified, readable)
-- `npm run watch` - Watch mode for development (unminified)
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code using Prettier
-- `npm test` - Run tests in watch mode
-- `npm run test:run` - Run tests once
-- `npm run test:watch` - Run tests in watch mode (same as `npm test`)
+- `pnpm run build` - Build all scripts for production (minified, optimized)
+- `pnpm run build-debug` - Build all scripts for debugging (unminified,
+  readable)
+- `pnpm run watch` - Watch mode for development (unminified)
+- `pnpm run lint` - Run ESLint
+- `pnpm run format` - Format code using Prettier
+- `pnpm test` - Run tests in watch mode
+- `pnpm run test:run` - Run tests once
+- `pnpm run test:watch` - Run tests in watch mode (same as `pnpm test`)
 
 **💡 Pro tip:** Use `build-debug` during development and `build` for final
 deployment to get the best of both worlds - readable code for debugging and
@@ -223,7 +224,7 @@ HomeyScriptKit provides two build modes optimized for different scenarios:
 
 #### Debug vs Production Builds
 
-**Debug builds** (`npm run build-debug`):
+**Debug builds** (`pnpm run build-debug`):
 
 - Preserve original variable names
 - Maintain proper code formatting and indentation
@@ -231,7 +232,7 @@ HomeyScriptKit provides two build modes optimized for different scenarios:
 - Include comments and spacing
 - Easier to debug in HomeyScript environment
 
-**Production builds** (`npm run build`):
+**Production builds** (`pnpm run build`):
 
 - Minified and optimized for size
 - Ideal for deployment to production environments
@@ -241,7 +242,7 @@ HomeyScriptKit provides two build modes optimized for different scenarios:
 When troubleshooting scripts directly on your Homey device:
 
 1. **Use debug builds** - Copy scripts from `./dist` directory that were built
-   with `npm run build-debug`
+   with `pnpm run build-debug`
 2. **Add logging statements** - Use `console.log()` liberally to trace execution
    flow
 3. **Check HomeyScript logs** - View execution details and error messages in the
@@ -255,13 +256,13 @@ For debugging during development:
 
 ```bash
 # Watch mode for continuous rebuilding during development
-npm run watch
+pnpm run watch
 
 # Run with debug output
-npm run build-debug
+pnpm run build-debug
 
 # Check for linting issues
-npm run lint
+pnpm run lint
 ```
 
 #### Common Debugging Strategies
@@ -298,12 +299,12 @@ reliable unit testing capabilities.
 
 ```bash
 # Run tests once
-npm run test:run
+pnpm run test:run
 
 # Run tests in watch mode (automatically re-runs when files change)
-npm test
+pnpm test
 # or
-npm run test:watch
+pnpm run test:watch
 ```
 
 #### Writing Tests
@@ -516,7 +517,7 @@ describe('MyScript', () => {
 Follow the comprehensive debugging strategies outlined in the
 [Debugging Scripts](#debugging-scripts) section. Key points:
 
-- Always use `npm run build-debug` during development
+- Always use `pnpm run build-debug` during development
 - Add strategic `console.log()` statements to trace execution
 - Test with simple parameters first, then increase complexity
 - Use the HomeyScript logs to view execution details and errors
@@ -584,7 +585,7 @@ Check out `packages/sonos/` for a more advanced script that shows:
 2. **Parameters not received**: Check URL encoding and parameter names
 3. **Result not available**: Verify the result tag name and check for execution
    errors
-4. **Build errors**: Run `npm run lint` to check for code issues
+4. **Build errors**: Run `pnpm run lint` to check for code issues
 
 ### Getting Help
 

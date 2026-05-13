@@ -29,7 +29,7 @@ const cli = meow(
   `
 	Usage
 
-		$ npx hsk <command> [options]
+		$ pnpm hsk <command> [options]
 
 	Commands
 
@@ -58,10 +58,10 @@ const cli = meow(
 
 	Examples
 
-		$ npx hsk sync --dir ./scripts
-		$ npx hsk pull --dir ./my-scripts
-		$ npx hsk list --apiKey your-api-key --ip 192.168.1.100
-		$ npx hsk list --apiKey your-api-key --host https://your-tunnel.example.com
+		$ pnpm hsk sync --dir ./scripts
+		$ pnpm hsk pull --dir ./my-scripts
+		$ pnpm hsk list --apiKey your-api-key --ip 192.168.1.100
+		$ pnpm hsk list --apiKey your-api-key --host https://your-tunnel.example.com
 
 	Authentication
 

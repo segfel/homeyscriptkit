@@ -93,11 +93,11 @@ Add new automation script
 
 ## Performance Optimizations
 
-The workflow includes npm dependency caching to speed up execution:
+The workflow includes pnpm dependency caching to speed up execution:
 
-- Caches `node_modules` based on `package-lock.json`
+- Caches `node_modules` based on `pnpm-lock.yaml`
 - Significantly reduces dependency installation time (typically 60-80% faster)
-- Automatically invalidates when `package-lock.json` changes
+- Automatically invalidates when `pnpm-lock.yaml` changes
 
 ## Required Setup
 
@@ -132,7 +132,7 @@ You must configure the following secrets in your GitHub repository:
 ## Troubleshooting
 
 - Check the GitHub Actions logs for detailed error messages
-- Test the sync command locally first: `npx hsk sync`
+- Test the sync command locally first: `pnpm hsk sync`
 - Verify your Homey configuration works locally
 - Check that your Homey is online and accessible
 

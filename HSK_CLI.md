@@ -16,7 +16,7 @@ disruption to your home automation.
 After cloning the repository, install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Configuration
@@ -61,10 +61,10 @@ the configuration file values:
 
 ```bash
 # Using IP address
-npx hsk list --apiKey your-api-key --ip 192.168.1.100 --https
+pnpm hsk list --apiKey your-api-key --ip 192.168.1.100 --https
 
 # Using host URL (supersedes --ip and --https)
-npx hsk list --apiKey your-api-key --host https://your-tunnel.example.com
+pnpm hsk list --apiKey your-api-key --host https://your-tunnel.example.com
 ```
 
 **Note:** CLI flags take precedence over configuration file values, allowing you
@@ -74,7 +74,7 @@ flag supersedes both `--ip` and `--https` flags when provided.
 ## Basic Usage
 
 ```bash
-npx hsk <command> [options]
+pnpm hsk <command> [options]
 ```
 
 ## Commands
@@ -86,7 +86,7 @@ npx hsk <command> [options]
 List all remote HomeyScript scripts:
 
 ```bash
-npx hsk list
+pnpm hsk list
 ```
 
 #### Sync Scripts
@@ -94,7 +94,7 @@ npx hsk list
 Push scripts to remote:
 
 ```bash
-npx hsk sync [script]
+pnpm hsk sync [script]
 ```
 
 The sync command will either update existing scripts or create new ones if they
@@ -106,7 +106,7 @@ and updates.
 Pull all remote scripts and save them locally:
 
 ```bash
-npx hsk pull
+pnpm hsk pull
 ```
 
 The pull command is particularly useful if you're new to HomeyScriptKit and want
@@ -121,7 +121,7 @@ forward with HomeyScriptKit's tools.
 Create a backup of scripts as JSON files:
 
 ```bash
-npx hsk backup [script]
+pnpm hsk backup [script]
 ```
 
 #### Restore Scripts
@@ -129,7 +129,7 @@ npx hsk backup [script]
 Restore scripts from backup files:
 
 ```bash
-npx hsk restore [script]
+pnpm hsk restore [script]
 ```
 
 **Caution:** The restore command will delete all existing scripts on your Homey
@@ -153,21 +153,21 @@ to backup your current scripts before performing a restore operation.
 
 ```bash
 # Push scripts from a specific directory
-npx hsk sync --dir ./scripts
+pnpm hsk sync --dir ./scripts
 
 # Pull scripts to a custom directory
-npx hsk pull --dir ./my-scripts
+pnpm hsk pull --dir ./my-scripts
 
 # Skip confirmation prompts for automated workflows
-npx hsk sync --skipConfirmation
-npx hsk restore --skipConfirmation
+pnpm hsk sync --skipConfirmation
+pnpm hsk restore --skipConfirmation
 
 # Override configuration with CLI flags
-npx hsk list --apiKey your-api-key --ip 192.168.1.100 --https
+pnpm hsk list --apiKey your-api-key --ip 192.168.1.100 --https
 
 # Use host URL (for tunnels or remote access)
-npx hsk list --apiKey your-api-key --host https://your-tunnel.example.com
-npx hsk sync --apiKey your-api-key --host https://your-tunnel.example.com
+pnpm hsk list --apiKey your-api-key --host https://your-tunnel.example.com
+pnpm hsk sync --apiKey your-api-key --host https://your-tunnel.example.com
 ```
 
 ## Authentication
