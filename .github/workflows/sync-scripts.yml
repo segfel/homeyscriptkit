@@ -31,14 +31,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Download build artifacts
         if: ${{ inputs.download-artifacts }}
@@ -49,11 +54,11 @@ jobs:
 
       - name: Build project
         if: ${{ inputs.build-if-comment }}
-        run: npm run build
+        run: pnpm run build
 
       - name: Sync scripts to Homey
         run: >
-          npx hsk sync --skipConfirmation --apiKey ${{ secrets.HOMEY_API_KEY }}
+          pnpm hsk sync --skipConfirmation --apiKey ${{ secrets.HOMEY_API_KEY }}
           --host ${{ secrets.HOMEY_HOST }}
 
       - name: Comment on PR

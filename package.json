@@ -12,13 +12,14 @@
     "hsk": "./bin/cli.sh"
   },
   "scripts": {
+    "hsk": "bin/cli.sh",
     "lint": "eslint . --ext .ts",
     "watch": "rolldown -c rolldown.config.ts --watch",
     "build": "NODE_ENV=prod rolldown -c rolldown.config.ts",
     "build-debug": "rolldown -c rolldown.config.ts",
-    "prebuild:common": "npm run lint && del-cli dist",
-    "prebuild": "npm run prebuild:common",
-    "prebuild-debug": "npm run prebuild:common",
+    "prebuild:common": "pnpm run lint && del-cli dist",
+    "prebuild": "pnpm run prebuild:common",
+    "prebuild-debug": "pnpm run prebuild:common",
     "help": "rolldown --help",
     "format": "prettier --write .",
     "test": "vitest",
@@ -42,13 +43,13 @@
   },
   "lint-staged": {
     "*.{js,ts}": [
-      "npm run lint",
-      "npm run format"
+      "pnpm run lint",
+      "pnpm run format"
     ],
     "*.ts": "eslint --cache --fix"
   },
   "gitHooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "pnpm exec lint-staged"
   },
   "homepage": "https://github.com/indieisaconcept/homeyscriptkit#readme",
   "dependencies": {
